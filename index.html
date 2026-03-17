@@ -2,378 +2,535 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kavya Saraboju | Cloud & DevOps Engineer</title>
-  <meta name="description" content="Kavya Saraboju — Senior Cloud & DevOps Engineer with 6+ years experience in Azure, AWS, Kubernetes, Terraform, and SRE." />
+  <meta
+    name="description"
+    content="Kavya Saraboju — Cloud & DevOps Engineer with experience in Azure, AWS, Kubernetes, Terraform, CI/CD, and SRE practices."
+  />
 
   <style>
-    :root{
-      --bg:#0b1220;
-      --card:#0f1b33;
-      --muted:#a9b4c7;
-      --text:#eef2ff;
-      --accent:#5b8cff;
-      --border:rgba(255,255,255,.10);
-      --radius:16px;
-      --max:1100px;
+    :root {
+      --bg: #0b1220;
+      --card: #0f1b33;
+      --muted: #a9b4c7;
+      --text: #eef2ff;
+      --accent: #5b8cff;
+      --border: rgba(255, 255, 255, 0.1);
+      --radius: 16px;
+      --max: 1100px;
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
+
+    * {
+      box-sizing: border-box;
     }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--max);margin:auto;padding:28px 18px 60px}
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:20px;
-      margin-bottom:16px;
+
+    html {
+      scroll-behavior: smooth;
     }
-    h1{margin:10px 0;font-size:38px}
-    h2{margin:0 0 10px;font-size:20px}
-    .muted{color:var(--muted)}
-    .btn{
-      display:inline-block;
-      padding:10px 14px;
-      border-radius:10px;
-      border:1px solid var(--border);
-      margin:6px 6px 0 0;
-      font-size:14px;
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
-    .primary{
-      background:var(--accent);
-      color:#061027;
-      font-weight:700;
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
-    .tags span{
-      display:inline-block;
-      border:1px solid var(--border);
-      border-radius:999px;
-      padding:5px 9px;
-      font-size:12px;
-      margin:4px;
-      color:var(--muted);
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
     }
-    ul{padding-left:18px;color:var(--muted)}
+
+    .wrap {
+      max-width: var(--max);
+      margin: auto;
+      padding: 28px 18px 60px;
+    }
+
+    .section {
+      margin-bottom: 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    h1 {
+      margin: 10px 0;
+      font-size: 38px;
+      line-height: 1.15;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .small {
+      font-size: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      margin: 6px 6px 0 0;
+      font-size: 14px;
+      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+
+    .primary {
+      background: var(--accent);
+      color: #061027;
+      font-weight: 700;
+    }
+
+    .tags span {
+      display: inline-block;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 5px 9px;
+      font-size: 12px;
+      margin: 4px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    ul {
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* PROOF / RECOGNITION */
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .proof-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .proof-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(900px 420px at 12% -10%, rgba(91, 140, 255, 0.2), transparent 55%),
+        radial-gradient(700px 320px at 92% 15%, rgba(120, 255, 198, 0.1), transparent 55%),
+        rgba(15, 27, 51, 0.85);
+      padding: 18px;
+    }
+
+    .proof-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .proof-title {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .proof-title b {
+      font-size: 15px;
+    }
+
+    .proof-title span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .badge {
+      font-size: 11px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .badge.accent {
+      background: linear-gradient(180deg, rgba(91, 140, 255, 0.95), rgba(91, 140, 255, 0.55));
+      border-color: rgba(91, 140, 255, 0.55);
+      color: #07122a;
+      font-weight: 800;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 560px) {
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .metric {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 14px;
+      padding: 12px;
+    }
+
+    .metric .k {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .metric .v {
+      margin-top: 6px;
+      font-size: 20px;
+      font-weight: 850;
+      letter-spacing: 0.2px;
+    }
+
+    .gold {
+      color: #ffd36b;
+    }
+
+    .silver {
+      color: #cbd5e1;
+    }
+
+    .bronze {
+      color: #f0a37a;
+    }
+
+    .proof-list {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .proof-list li {
+      margin: 8px 0;
+    }
+
+    .links-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .link-chip {
+      font-size: 11px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--muted);
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .link-chip:hover {
+      border-color: rgba(255, 255, 255, 0.22);
+      color: var(--text);
+    }
+
+    .project {
+      margin-bottom: 24px;
+    }
+
+    .project:last-child {
+      margin-bottom: 0;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+    }
   </style>
-  <style>
-  /* --- PROOF / RECOGNITION STYLES --- */
-  .proof-grid{
-    display:grid;
-    grid-template-columns: 1.2fr .8fr;
-    gap:12px;
-  }
-  @media (max-width: 900px){
-    .proof-grid{grid-template-columns:1fr}
-  }
-
-  .proof-card{
-    position:relative;
-    overflow:hidden;
-    border-radius: var(--radius);
-    border:1px solid var(--border);
-    background:
-      radial-gradient(900px 420px at 12% -10%, rgba(91,140,255,.20), transparent 55%),
-      radial-gradient(700px 320px at 92% 15%, rgba(120,255,198,.10), transparent 55%),
-      rgba(15,27,51,.85);
-    padding:18px;
-  }
-
-  .proof-top{
-    display:flex;
-    align-items:flex-start;
-    justify-content:space-between;
-    gap:12px;
-  }
-
-  .proof-title{
-    display:flex;
-    flex-direction:column;
-    gap:4px;
-  }
-  .proof-title b{font-size:15px}
-  .proof-title span{font-size:12px;color:var(--muted)}
-
-  .badge{
-    font-size:11px;
-    padding:7px 10px;
-    border-radius:999px;
-    border:1px solid rgba(255,255,255,.14);
-    background: rgba(255,255,255,.04);
-    color: var(--muted);
-    white-space:nowrap;
-  }
-  .badge.accent{
-    background: linear-gradient(180deg, rgba(91,140,255,.95), rgba(91,140,255,.55));
-    border-color: rgba(91,140,255,.55);
-    color:#07122a;
-    font-weight:800;
-  }
-
-  .metrics{
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap:10px;
-    margin-top:12px;
-  }
-  @media (max-width: 560px){
-    .metrics{grid-template-columns:1fr}
-  }
-
-  .metric{
-    border:1px solid rgba(255,255,255,.12);
-    background: rgba(255,255,255,.03);
-    border-radius:14px;
-    padding:12px;
-  }
-  .metric .k{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:8px;
-    color: var(--muted);
-    font-size:12px;
-  }
-  .metric .v{
-    margin-top:6px;
-    font-size:20px;
-    font-weight:850;
-    letter-spacing:.2px;
-  }
-
-  .gold{ color: #ffd36b; }
-  .silver{ color: #cbd5e1; }
-  .bronze{ color: #f0a37a; }
-
-  .proof-list{
-    margin:12px 0 0;
-    padding-left:18px;
-    color: var(--muted);
-    font-size:13px;
-  }
-  .proof-list li{ margin:8px 0; }
-
-  .links-row{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-    margin-top:12px;
-  }
-  .link-chip{
-    font-size:11px;
-    padding:7px 10px;
-    border-radius:999px;
-    border:1px solid rgba(255,255,255,.14);
-    background: rgba(255,255,255,.03);
-    color: var(--muted);
-  }
-  .link-chip:hover{
-    border-color: rgba(255,255,255,.22);
-    color: var(--text);
-  }
-</style>
 </head>
 
 <body>
-<div class="wrap">
+  <div class="wrap">
+    <!-- HERO -->
+    <header class="card">
+      <div class="muted">Open to Cloud / DevOps / SRE / Platform roles</div>
+      <h1>Kavya Saraboju</h1>
 
-  <!-- HERO -->
-  <div class="card">
-    <div class="muted">Open to Cloud / DevOps / SRE roles</div>
-    <h1>Kavya Saraboju</h1>
+      <p class="muted">
+        Cloud & DevOps Engineer with hands-on experience across Azure, AWS, Kubernetes,
+        Terraform, CI/CD, observability, and production support. I build reliable,
+        scalable cloud environments with a strong focus on automation, security,
+        and operational excellence.
+      </p>
 
-    <p class="muted">
-      Senior Cloud & DevOps Engineer with 6+ years experience delivering scalable,
-      highly available cloud platforms across Azure and AWS.
-      Specialized in Infrastructure as Code, Kubernetes, CI/CD, and reliability engineering.
-    </p>
-
-    <div>
-      <a class="btn primary" href="#projects">Projects</a>
-      <a class="btn" href="Kavya_Saraboju_Resume.pdf" target="_blank">Resume</a>
-      <a class="btn" href="https://github.com/kavya259" target="_blank">GitHub</a>
-      <a class="btn" href="https://stackoverflow.com/users/15997509/kavya-saraboju" target="_blank">Stack Overflow</a>
-      <a class="btn" href="https://www.linkedin.com/in/kavyasaraboju/" target="_blank">LinkedIn</a>
-      <a class="btn" href="mailto:kavyasaraboju491@gmail.com">Email</a>
-    </div>
-  </div>
-
-  <div id="proof" class="section">
-  <h2>Proof & Recognition</h2>
-
-  <div class="proof-grid">
-    <!-- LEFT: Stack Overflow credibility -->
-    <div class="proof-card">
-      <div class="proof-top">
-        <div class="proof-title">
-          <b>Stack Overflow Impact</b>
-          <span>Community-verified problem solving (public proof)</span>
-        </div>
-        <span class="badge accent">Top Signal</span>
+      <div>
+        <a class="btn primary" href="#projects">Projects</a>
+        <a class="btn" href="./Kavya_Saraboju_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a class="btn" href="https://github.com/kavya259" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="btn" href="https://stackoverflow.com/users/15997509/kavya-saraboju" target="_blank" rel="noopener noreferrer">Stack Overflow</a>
+        <a class="btn" href="https://www.linkedin.com/in/kavyasaraboju/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="btn" href="mailto:kavyasaraboju491@gmail.com">Email</a>
       </div>
+    </header>
 
-      <div class="metrics">
-        <div class="metric">
-          <div class="k"><span>Reputation</span><span class="badge">SO</span></div>
-          <div class="v">11,343</div>
-        </div>
-        <div class="metric">
-          <div class="k"><span>Answers</span><span class="badge">Q&A</span></div>
-          <div class="v">800</div>
-        </div>
-        <div class="metric">
-          <div class="k"><span>Profile Reach</span><span class="badge">Views</span></div>
-          <div class="v">1.3m</div>
-        </div>
-        <div class="metric">
-          <div class="k"><span>Badges</span><span class="badge">Awards</span></div>
-          <div class="v">
-            <span class="gold">2</span> /
-            <span class="silver">10</span> /
-            <span class="bronze">20</span>
+    <!-- PROOF -->
+    <section id="proof" class="section">
+      <div class="card">
+        <h2>Proof & Recognition</h2>
+
+        <div class="proof-grid">
+          <!-- LEFT -->
+          <div class="proof-card">
+            <div class="proof-top">
+              <div class="proof-title">
+                <b>Stack Overflow Impact</b>
+                <span>Community-verified problem solving and public technical credibility</span>
+              </div>
+              <span class="badge accent">Top Signal</span>
+            </div>
+
+            <div class="metrics">
+              <div class="metric">
+                <div class="k"><span>Reputation</span><span class="badge">SO</span></div>
+                <div class="v">11,343</div>
+              </div>
+
+              <div class="metric">
+                <div class="k"><span>Answers</span><span class="badge">Q&A</span></div>
+                <div class="v">800</div>
+              </div>
+
+              <div class="metric">
+                <div class="k"><span>Profile Reach</span><span class="badge">Views</span></div>
+                <div class="v">1.3m</div>
+              </div>
+
+              <div class="metric">
+                <div class="k"><span>Badges</span><span class="badge">Awards</span></div>
+                <div class="v">
+                  <span class="gold">2</span> /
+                  <span class="silver">10</span> /
+                  <span class="bronze">20</span>
+                </div>
+                <div class="muted small" style="margin-top: 6px;">Gold / Silver / Bronze</div>
+              </div>
+            </div>
+
+            <div class="muted small" style="margin-top: 12px;">
+              Top tags: <b>azure</b>, <b>azure-active-directory</b>, <b>terraform</b>
+            </div>
+
+            <div class="links-row">
+              <a
+                class="link-chip"
+                href="https://stackoverflow.com/users/15997509/kavya-saraboju"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Stack Overflow →
+              </a>
+            </div>
           </div>
-          <div class="muted small" style="margin-top:6px">Gold / Silver / Bronze</div>
+
+          <!-- RIGHT -->
+          <div class="proof-card">
+            <div class="proof-top">
+              <div class="proof-title">
+                <b>What I Can Prove Quickly</b>
+                <span>Fast recruiter scan</span>
+              </div>
+              <span class="badge">Fast Scan</span>
+            </div>
+
+            <ul class="proof-list">
+              <li><b>Enterprise delivery</b> in large-scale environments supporting cloud platform operations.</li>
+              <li><b>Telecom and banking exposure</b> with NDA-safe summaries focused on reliability and delivery.</li>
+              <li><b>IaC + CI/CD mindset</b> built around repeatable, documented, and supportable automation.</li>
+              <li><b>Reliability focus</b> with monitoring, alerting, runbooks, troubleshooting, and incident discipline.</li>
+            </ul>
+
+            <div class="links-row">
+              <a class="link-chip" href="https://github.com/kavya259" target="_blank" rel="noopener noreferrer">GitHub →</a>
+              <a class="link-chip" href="https://www.linkedin.com/in/kavyasaraboju/" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
+              <a class="link-chip" href="./Kavya_Saraboju_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume →</a>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="muted small" style="margin-top:12px">
-        Top tags: <b>azure</b>, <b>azure-active-directory</b>, <b>terraform</b>
+    <!-- SKILLS -->
+    <section class="card">
+      <h2>Core Skills</h2>
+      <div class="tags">
+        <span>Azure</span>
+        <span>AWS</span>
+        <span>Kubernetes</span>
+        <span>Docker</span>
+        <span>Terraform</span>
+        <span>CI/CD</span>
+        <span>GitHub Actions</span>
+        <span>Jenkins</span>
+        <span>Prometheus</span>
+        <span>Grafana</span>
+        <span>Datadog</span>
+        <span>Linux</span>
+        <span>Networking</span>
+        <span>IAM</span>
+        <span>Python</span>
+        <span>Java</span>
+        <span>C#</span>
       </div>
+    </section>
 
-      <div class="links-row">
-        <a class="link-chip" href="https://stackoverflow.com/users/15997509/kavya-saraboju" target="_blank" rel="noreferrer">
-          View Stack Overflow →
+    <!-- PROJECTS -->
+    <section id="projects" class="card">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <b>AI Incident Assistant</b>
+        <p class="muted">
+          Built an incident management API system to demonstrate production-style service
+          design, alert handling, reliability workflows, and operational troubleshooting.
+          Showcases backend engineering, API design, and SRE-oriented thinking.
+        </p>
+        <a
+          class="btn"
+          href="https://github.com/kavya259/ai-incident-assistant"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
         </a>
       </div>
-    </div>
 
-    <!-- RIGHT: recruiter trust signals -->
-    <div class="proof-card">
-      <div class="proof-top">
-        <div class="proof-title">
-          <span>What I can prove quickly (no fluff)</span>
-        </div>
-        <span class="badge">Fast Scan</span>
+      <div class="project">
+        <b>Kubernetes Triage Toolkit</b>
+        <p class="muted">
+          Built a Kubernetes troubleshooting toolkit with diagnostic workflows for pod failures,
+          CrashLoopBackOff, networking issues, and observability checks, aligned with practical
+          SRE incident response patterns.
+        </p>
+        <a
+          class="btn"
+          href="https://github.com/kavya259/k8s-triage"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
       </div>
 
-      <ul class="proof-list">
-        <li><b>Enterprise delivery</b> in large-scale environments (Microsoft client work).</li>
-        <li><b>Telecom + Banking sector</b> cloud experience (confidential, NDA-safe).</li>
-        <li><b>IaC + CI/CD</b> automation mindset (repeatable, documented, testable).</li>
-        <li><b>Reliability focus</b>: monitoring, alerting, runbooks, incident discipline.</li>
+      <div class="project">
+        <b>Terraform IAM + EC2 Infrastructure</b>
+        <p class="muted">
+          Created a modular Infrastructure as Code project for provisioning AWS IAM and EC2
+          resources with a focus on secure configuration, reusability, and clean Terraform structure.
+        </p>
+        <a
+          class="btn"
+          href="https://github.com/kavya259/terraform-iam-ec2-project"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="card">
+      <h2>Professional Experience</h2>
+
+      <b>Cloud & DevOps Engineer — Telecom (AT&amp;T)</b>
+      <ul>
+        <li>Supported Azure and AWS cloud environments for large-scale telecom workloads with a focus on platform reliability and operational stability.</li>
+        <li>Worked with AKS and EKS-based deployments for containerized services, including release support, environment validation, and issue triage.</li>
+        <li>Used Terraform and CI/CD automation to standardize infrastructure provisioning and deployment workflows.</li>
+        <li>Improved observability using CloudWatch, Azure Monitor, Prometheus, and Grafana to support faster troubleshooting and incident response.</li>
       </ul>
 
-      <div class="links-row">
-        <a class="link-chip" href="https://github.com/kavya259" target="_blank" rel="noreferrer">GitHub →</a>
-        <a class="link-chip" href="https://www.linkedin.com/in/kavyasaraboju/" target="_blank" rel="noreferrer">LinkedIn →</a>
-        <a class="link-chip" href="Kavya_Saraboju_Resume.pdf" target="_blank" rel="noreferrer">Resume →</a>
-      </div>
+      <b>Cloud Infrastructure / DevOps Engineer — LTIMindtree (Microsoft Client)</b>
+      <ul>
+        <li>Provisioned and supported Azure infrastructure and hybrid cloud environments for enterprise use cases.</li>
+        <li>Contributed to automation, reliability, and operational support practices across cloud platform workflows.</li>
+        <li>Worked on monitoring, incident response support, and process improvements to strengthen service stability.</li>
+      </ul>
 
-      <!-- OPTIONAL: replace with your real awards later -->
-      <div class="muted small" style="margin-top:12px">
-      </div>
-    </div>
+      <b>Cloud Engineer — Banking</b>
+      <ul>
+        <li>Supported secure cloud infrastructure for financial systems with attention to operational controls and platform stability.</li>
+        <li>Worked on IAM, networking, monitoring, and disaster recovery-aligned cloud support tasks.</li>
+        <li>Contributed to compliance-aware cloud operations and security-focused infrastructure practices.</li>
+      </ul>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="card">
+      <h2>Certifications</h2>
+      <ul>
+        <li>Microsoft Azure Fundamentals</li>
+        <li>Microsoft Azure Administrator Associate</li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="card">
+      <h2>Contact</h2>
+      <p class="muted">
+        Seeking Cloud / DevOps / SRE / Infrastructure / Platform Engineer roles.
+        Open to full-time, contract-to-hire, contract opportunities, and technical collaborations.
+      </p>
+      <a class="btn primary" href="mailto:kavyasaraboju491@gmail.com">Email</a>
+      <a class="btn" href="./Kavya_Saraboju_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+    </section>
+
+    <footer class="muted footer">
+      © 2026 Kavya Saraboju
+    </footer>
   </div>
-</div>
-
-  <!-- SKILLS -->
-  <div class="card">
-    <h2>Core Skills</h2>
-    <div class="tags">
-      <span>Azure</span><span>AWS</span><span>Kubernetes</span><span>Docker</span>
-      <span>Terraform</span><span>CI/CD</span><span>GitHub Actions</span>
-      <span>Jenkins</span><span>Prometheus</span><span>Grafana</span>
-      <span>Datadog</span><span>Linux</span><span>Networking</span>
-      <span>IAM</span><span>Python</span><span>Java</span><span>C#</span>
-    </div>
-  </div>
-
-  <!-- PROJECTS -->
-  <div id="projects" class="card">
-    <h2>Projects</h2>
-
-    <b>AI Incident Assistant</b>
-    <p class="muted">
-      Incident management API system demonstrating production-grade service design
-      and reliability workflows.
-    </p>
-    <a class="btn" href="https://github.com/kavya259/ai-incident-assistant" target="_blank">GitHub</a>
-
-    <br><br>
-
-    <b>Kubernetes Triage Toolkit</b>
-    <p class="muted">
-      Troubleshooting patterns and diagnostic workflows for Kubernetes clusters
-      aligned with SRE practices.
-    </p>
-    <a class="btn" href="https://github.com/kavya259/k8s-triage" target="_blank">GitHub</a>
-
-    <br><br>
-
-    <b>Terraform IAM + EC2 Infrastructure</b>
-    <p class="muted">
-      Infrastructure as Code project provisioning secure AWS resources
-      with modular Terraform architecture.
-    </p>
-    <a class="btn" href="https://github.com/kavya259/terraform-iam-ec2-project" target="_blank">GitHub</a>
-  </div>
-
-  <!-- EXPERIENCE -->
-<div class="card">
-  <h2>Professional Experience</h2>
-
-  <b> Cloud & DevOps Engineer — Telecom (AT&T)</b>
-  <ul>
-    <li>Designed and operated multi-cloud Azure and AWS platforms for large-scale telecom systems</li>
-    <li>Managed Kubernetes (EKS/AKS) microservices environments and production deployments</li>
-    <li>Implemented Infrastructure as Code using Terraform and automated CI/CD pipelines</li>
-    <li>Built monitoring and observability using CloudWatch, Azure Monitor, Prometheus, and Grafana</li>
-  </ul>
-
-  <b>Cloud Infrastructure/DevOps Engineer — LTIMindtree (Microsoft Client)</b>
-  <ul>
-    <li>Provisioned Azure infrastructure and hybrid cloud environments</li>
-    <li>Implemented SRE SLIs/SLOs and observability dashboards</li>
-    <li>Improved reliability, automation, and incident resolution processes</li>
-  </ul>
-
-  <b>Cloud Engineer — Banking </b>
-  <ul>
-    <li>Managed secure cloud infrastructure for financial systems</li>
-    <li>Implemented IAM, networking, monitoring, and disaster recovery architectures</li>
-    <li>Supported compliance-aligned cloud operations and security controls</li>
-  </ul>
-</div>
-
-  <!-- CERTIFICATIONS -->
-  <div class="card">
-    <h2>Certifications</h2>
-    <ul>
-      <li>Microsoft Azure Fundamentals</li>
-      <li>Microsoft Azure Administrator Associate</li>
-    </ul>
-  </div>
-
-  <!-- CONTACT -->
-  <div class="card">
-    <h2>Contact</h2>
-    <p class="muted">
-      Seeking Cloud / DevOps / SRE / Infrastructure / Platform Engineer roles.  
-      Open to full-time , contract-to-hire, contract opportunities and collaborations.
-    </p>
-    <a class="btn primary" href="mailto:kavyasaraboju491@gmail.com">Email</a>
-    <a class="btn" href="Kavya_Saraboju_Resume.pdf" target="_blank">Resume</a>
-  </div>
-
-  <div class="muted" style="text-align:center;margin-top:20px">
-    © 2026 Kavya Saraboju
-  </div>
-
-</div>
 </body>
 </html>
